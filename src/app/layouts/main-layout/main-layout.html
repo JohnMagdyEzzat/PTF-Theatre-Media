@@ -1,0 +1,185 @@
+<div class="app-shell">
+  <!-- Mobile Overlay -->
+  <div class="sidebar-overlay" [class.active]="sidebarOpen" (click)="closeSidebar()"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.open]="sidebarOpen">
+    <div class="sidebar-header">
+      <a routerLink="/dashboard" class="brand" (click)="closeSidebar()">
+        <div class="brand-icon">
+          <span>▶</span>
+        </div>
+
+        <div class="brand-text">
+          <span class="brand-title">My Library</span>
+          <span class="brand-subtitle">Video Knowledge Base</span>
+        </div>
+      </a>
+
+      <button class="mobile-close" type="button" aria-label="Close menu" (click)="closeSidebar()">
+        ✕
+      </button>
+    </div>
+
+    <nav class="navigation">
+      <div class="nav-section">
+        <span class="nav-section-title">Library</span>
+
+        <a
+          routerLink="/dashboard"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item"
+          (click)="closeSidebar()"
+        >
+          <span class="nav-icon">⌂</span>
+          <span>Dashboard</span>
+        </a>
+
+        <a routerLink="/videos" routerLinkActive="active" class="nav-item" (click)="closeSidebar()">
+          <span class="nav-icon">▣</span>
+          <span>All Videos</span>
+        </a>
+
+        <a
+          routerLink="/categories"
+          routerLinkActive="active"
+          class="nav-item"
+          (click)="closeSidebar()"
+        >
+          <span class="nav-icon">▦</span>
+          <span>Categories</span>
+        </a>
+
+        <a
+          routerLink="/favorites"
+          routerLinkActive="active"
+          class="nav-item"
+          (click)="closeSidebar()"
+        >
+          <span class="nav-icon">★</span>
+          <span>Favorites</span>
+        </a>
+
+        <a
+          routerLink="/history"
+          routerLinkActive="active"
+          class="nav-item"
+          (click)="closeSidebar()"
+        >
+          <span class="nav-icon">◷</span>
+          <span>Watch History</span>
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-section-title">Collections</span>
+
+        <a
+          routerLink="/playlists"
+          routerLinkActive="active"
+          class="nav-item"
+          (click)="closeSidebar()"
+        >
+          <span class="nav-icon">☷</span>
+          <span>Playlists</span>
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-section-title">Manage</span>
+
+        <a
+          routerLink="/add-video"
+          routerLinkActive="active"
+          class="nav-item add-video-link"
+          (click)="closeSidebar()"
+        >
+          <span class="nav-icon">＋</span>
+          <span>Add Video</span>
+        </a>
+
+        <a
+          routerLink="/settings"
+          routerLinkActive="active"
+          class="nav-item"
+          (click)="closeSidebar()"
+        >
+          <span class="nav-icon">⚙</span>
+          <span>Settings</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <div class="storage-info">
+        <div class="storage-header">
+          <span>Library</span>
+          <span>Free</span>
+        </div>
+
+        <div class="storage-bar">
+          <div class="storage-progress"></div>
+        </div>
+
+        <span class="storage-description"> Your videos are hosted online. </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Application -->
+  <div class="main-wrapper">
+    <!-- Header -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-button" type="button" aria-label="Open menu" (click)="toggleSidebar()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <a routerLink="/dashboard" class="mobile-brand">
+          <div class="mobile-brand-icon">▶</div>
+          <span>My Library</span>
+        </a>
+      </div>
+
+      <!-- Search -->
+      <app-search-bar class="global-search"></app-search-bar>
+
+      <div class="topbar-actions">
+        <button
+          class="icon-button search-mobile"
+          type="button"
+          aria-label="Search"
+          (click)="openSearch()"
+        >
+          ⌕
+        </button>
+
+        <button class="icon-button" type="button" aria-label="Add video" routerLink="/add-video">
+          ＋
+        </button>
+
+        <button class="user-menu" type="button">
+          <div class="avatar">
+            {{ userInitial }}
+          </div>
+
+          <div class="user-info">
+            <span class="user-name">{{ userName }}</span>
+            <span class="user-role">Personal Library</span>
+          </div>
+
+          <span class="dropdown-arrow">⌄</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
