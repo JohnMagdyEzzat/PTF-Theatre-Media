@@ -132,49 +132,11 @@
   <div class="main-wrapper">
     <!-- Header -->
     <header class="topbar">
-      <div class="topbar-left">
-        <button class="menu-button" type="button" aria-label="Open menu" (click)="toggleSidebar()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <app-topbar-left [(sidebarOpen)]="sidebarOpen"></app-topbar-left>
 
-        <a routerLink="/dashboard" class="mobile-brand">
-          <div class="mobile-brand-icon">▶</div>
-          <span>My Library</span>
-        </a>
-      </div>
-
-      <!-- Search -->
       <app-search-bar class="global-search"></app-search-bar>
 
-      <div class="topbar-actions">
-        <button
-          class="icon-button search-mobile"
-          type="button"
-          aria-label="Search"
-          (click)="openSearch()"
-        >
-          ⌕
-        </button>
-
-        <button class="icon-button" type="button" aria-label="Add video" routerLink="/add-video">
-          ＋
-        </button>
-
-        <button class="user-menu" type="button">
-          <div class="avatar">
-            {{ userInitial }}
-          </div>
-
-          <div class="user-info">
-            <span class="user-name">{{ userName }}</span>
-            <span class="user-role">Personal Library</span>
-          </div>
-
-          <span class="dropdown-arrow">⌄</span>
-        </button>
-      </div>
+      <app-topbar-actions class="topbar-actions"></app-topbar-actions>
     </header>
 
     <!-- Page Content -->

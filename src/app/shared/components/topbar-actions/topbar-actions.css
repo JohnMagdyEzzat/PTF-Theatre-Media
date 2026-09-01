@@ -1,0 +1,141 @@
+/* =========================================================
+   TOPBAR ACTIONS
+   ========================================================= */
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-button {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.icon-button:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.search-mobile {
+  display: none;
+}
+
+/* =========================================================
+   USER MENU
+   ========================================================= */
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 4px 6px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  cursor: pointer;
+}
+
+.user-menu:hover {
+  background: var(--surface-hover);
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #ff3b30, #ff6b61);
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-name {
+  color: var(--text-primary);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.user-role {
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.dropdown-arrow {
+  margin-left: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+  .user-info,
+  .dropdown-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-mobile {
+    display: grid;
+  }
+
+  .topbar-actions {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+}

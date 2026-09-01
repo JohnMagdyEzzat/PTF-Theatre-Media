@@ -331,10 +331,6 @@
   z-index: 900;
 }
 
-.topbar-left {
-  display: none;
-}
-
 /* =========================================================
    GLOBAL SEARCH
    ========================================================= */
@@ -351,115 +347,6 @@
    TOPBAR ACTIONS
    ========================================================= */
 
-.topbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.icon-button {
-  width: 38px;
-  height: 38px;
-
-  display: grid;
-  place-items: center;
-
-  border: 0;
-  border-radius: 9px;
-
-  background: transparent;
-
-  color: var(--text-secondary);
-
-  font-size: 20px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.icon-button:hover {
-  background: var(--surface-hover);
-  color: var(--text-primary);
-}
-
-.search-mobile {
-  display: none;
-}
-
-/* =========================================================
-   USER MENU
-   ========================================================= */
-
-.user-menu {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-
-  padding: 4px 6px;
-
-  border: 0;
-  border-radius: 10px;
-
-  background: transparent;
-
-  color: var(--text-primary);
-
-  cursor: pointer;
-}
-
-.user-menu:hover {
-  background: var(--surface-hover);
-}
-
-.avatar {
-  width: 34px;
-  height: 34px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-
-  background: linear-gradient(135deg, #ff3b30, #ff6b61);
-
-  color: white;
-
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.user-name {
-  color: var(--text-primary);
-
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.user-role {
-  margin-top: 2px;
-
-  color: var(--text-muted);
-
-  font-size: 9px;
-}
-
-.dropdown-arrow {
-  margin-left: 3px;
-
-  color: var(--text-muted);
-
-  font-size: 15px;
-}
-
 /* =========================================================
    PAGE CONTENT
    ========================================================= */
@@ -471,40 +358,6 @@
   margin: 0 auto;
 
   padding: 32px;
-}
-
-/* =========================================================
-   MOBILE BRAND
-   ========================================================= */
-
-.mobile-brand {
-  display: none;
-
-  align-items: center;
-  gap: 8px;
-
-  color: var(--text-primary);
-
-  font-size: 14px;
-  font-weight: 700;
-
-  text-decoration: none;
-}
-
-.mobile-brand-icon {
-  width: 30px;
-  height: 30px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 8px;
-
-  background: var(--accent);
-
-  color: white;
-
-  font-size: 11px;
 }
 
 /* =========================================================
@@ -546,11 +399,6 @@
 
   .page-content {
     padding: 24px;
-  }
-
-  .user-info,
-  .dropdown-arrow {
-    display: none;
   }
 }
 
@@ -614,55 +462,8 @@
     gap: 12px;
   }
 
-  .topbar-left {
-    display: flex;
-    align-items: center;
-  }
-
-  .menu-button {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-
-    padding: 9px;
-
-    border: 0;
-    border-radius: 9px;
-
-    background: transparent;
-
-    cursor: pointer;
-  }
-
-  .menu-button:hover {
-    background: var(--surface-hover);
-  }
-
-  .menu-button span {
-    display: block;
-
-    width: 18px;
-    height: 2px;
-
-    border-radius: 2px;
-
-    background: var(--text-secondary);
-  }
-
-  .mobile-brand {
-    display: flex;
-  }
-
   .global-search {
     display: none;
-  }
-
-  .search-mobile {
-    display: grid;
   }
 
   .topbar-actions {
@@ -679,21 +480,7 @@
    ========================================================= */
 
 @media (max-width: 480px) {
-  .mobile-brand span {
-    display: none;
-  }
-
   .topbar {
     gap: 4px;
-  }
-
-  .icon-button {
-    width: 34px;
-    height: 34px;
-  }
-
-  .avatar {
-    width: 32px;
-    height: 32px;
   }
 }

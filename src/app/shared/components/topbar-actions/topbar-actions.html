@@ -1,0 +1,27 @@
+<div class="topbar-actions">
+  <button
+    class="icon-button search-mobile"
+    type="button"
+    aria-label="Search"
+    (click)="openSearch()"
+  >
+    ⌕
+  </button>
+
+  <button class="icon-button" type="button" aria-label="Add video" routerLink="/add-video">
+    ＋
+  </button>
+
+  <button class="user-menu" type="button">
+    <div class="avatar">
+      {{ userInitial }}
+    </div>
+
+    <div class="user-info">
+      <span class="user-name">{{ userName }}</span>
+      <span class="user-role">Personal Library</span>
+    </div>
+
+    <span class="dropdown-arrow">⌄</span>
+  </button>
+</div>
