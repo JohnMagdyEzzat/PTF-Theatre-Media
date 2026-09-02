@@ -1,1 +1,90 @@
-<p>add-video works!</p>
+<form [formGroup]="videoForm" (ngSubmit)="submit()">
+  <!-- Title -->
+  <div class="form-group">
+    <label for="title">Title <span>*</span></label>
+    <input
+      id="title"
+      type="text"
+      formControlName="title"
+      placeholder="e.g. Angular Signals Deep Dive"
+    />
+    @if (videoForm.get('title')?.invalid && videoForm.get('title')?.touched) {
+      <div>Title is required.</div>
+    }
+  </div>
+
+  <!-- Description -->
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" rows="5"></textarea>
+  </div>
+
+  <!-- Category -->
+  <!-- <div class="form-group">
+    <label for="category">Category</label>
+    <select id="category" formControlName="category_id">
+      <option value="">Select category</option>
+      @for (category of categories; track $index) {
+        <option [value]="category.id">
+          {{ category.name }}
+        </option>
+      }
+    </select>
+  </div> -->
+
+  <!-- Level -->
+  <!-- <div class="form-group">
+    <label for="level">Level</label>
+    <select id="level" formControlName="level">
+      <option value="">Select level</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+  </div> -->
+
+  <!-- YouTube URL -->
+  <div class="form-group">
+    <label for="youtubeUrl">YouTube URL <span>*</span></label>
+    <input
+      id="youtubeUrl"
+      type="url"
+      formControlName="youtube_url"
+      placeholder="https://www.youtube.com/watch?v=..."
+    />
+    @if (videoForm.get('youtube_url')?.invalid && videoForm.get('youtube_url')?.touched) {
+      <div>YouTube URL is required.</div>
+    }
+  </div>
+
+  <!-- Thumbnail -->
+  <div class="form-group">
+    <label for="thumbnail">Thumbnail URL</label>
+    <input id="thumbnail" type="url" formControlName="thumbnail_url" />
+  </div>
+
+  <!-- Duration -->
+  <div class="form-group">
+    <label for="duration">Duration</label>
+    <input
+      id="duration"
+      type="number"
+      formControlName="duration_seconds"
+      placeholder="Duration in seconds"
+    />
+  </div>
+
+  <!-- Tags -->
+  <!-- <div class="form-group">
+    <label for="tags">Tags</label>
+    <input id="tags" type="text" formControlName="tags" placeholder="angular, signals, rxjs" />
+  </div> -->
+
+  <!-- Actions -->
+  <div class="form-actions">
+    <button type="reset" class="cancel-button" (click)="goBack()">Back</button>
+    <button type="submit" class="save-button" [disabled]="videoForm.invalid || saving">
+      {{ saving ? 'Saving...' : '+ Add Video' }}
+    </button>
+  </div>
+</form>

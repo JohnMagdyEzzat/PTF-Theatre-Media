@@ -90,10 +90,10 @@
         <span class="nav-section-title">Manage</span>
 
         <a
-          routerLink="/add-video"
+          routerLink="/add/video"
           routerLinkActive="active"
           class="nav-item add-video-link"
-          (click)="closeSidebar()"
+          (click)="closeSidebar(); addVideo()"
         >
           <span class="nav-icon">＋</span>
           <span>Add Video</span>

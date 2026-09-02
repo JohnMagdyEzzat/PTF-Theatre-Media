@@ -1,1 +1,9 @@
-<p>video-list works!</p>
+<div class="video-list-container">
+  @if (videos().length) {
+    @for (video of videos(); track $index) {
+      <app-video-card [video]="video"></app-video-card>
+    }
+  } @else {
+    <p>Nothing here to see! Please add a video.</p>
+  }
+</div>
