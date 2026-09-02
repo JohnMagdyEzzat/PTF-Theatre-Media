@@ -1,16 +1,14 @@
 import { Service } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Video, VideoDTO } from '../models/video';
+import { environment } from '../../../environments/environment';
 
 @Service()
 export class SupabaseService {
   private supabase: SupabaseClient;
 
   constructor() {
-    this.supabase = createClient(
-      'https://onzhqeumxmuqbsfmyikf.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uemhxZXVteG11cWJzZm15aWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzc0MTgsImV4cCI6MjEwMzkxMzQxOH0.g_I4sZpMkfXwL3Fqzt8-d9WPzxkGT8Kx67Vc3gLvyjI',
-    );
+    this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
   }
 
   async getVideos() {
