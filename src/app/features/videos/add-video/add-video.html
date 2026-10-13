@@ -1,4 +1,26 @@
 <form [formGroup]="videoForm" (ngSubmit)="submit()">
+  <!-- Video URL -->
+  <div class="form-group">
+    <label for="videoUrl">Video URL <span>*</span></label>
+    <input id="videoUrl" type="url" formControlName="videoUrl" (blur)="updateFormDate()" />
+    @if (videoForm.get('videoUrl')?.invalid && videoForm.get('videoUrl')?.touched) {
+      @if (videoForm.get('videoUrl')?.hasError('required')) {
+        <div>Video URL is required.</div>
+      } @else if (videoForm.get('videoUrl')?.hasError('invalidUrl')) {
+        <div>Please enter a valid URL.</div>
+      }
+    }
+  </div>
+
+  <!-- Video Service -->
+  <div class="form-group">
+    <label for="videoService">Video service provider<span>*</span></label>
+    <input id="videoService" type="url" formControlName="videoService" />
+    @if (videoForm.get('videoService')?.invalid && videoForm.get('videoService')?.touched) {
+      err
+    }
+  </div>
+
   <!-- Title -->
   <div class="form-group">
     <label for="title">Title <span>*</span></label>
@@ -43,35 +65,10 @@
     </select>
   </div> -->
 
-  <!-- YouTube URL -->
-  <div class="form-group">
-    <label for="youtubeUrl">YouTube URL <span>*</span></label>
-    <input
-      id="youtubeUrl"
-      type="url"
-      formControlName="youtube_url"
-      placeholder="https://www.youtube.com/watch?v=..."
-    />
-    @if (videoForm.get('youtube_url')?.invalid && videoForm.get('youtube_url')?.touched) {
-      <div>YouTube URL is required.</div>
-    }
-  </div>
-
   <!-- Thumbnail -->
   <div class="form-group">
     <label for="thumbnail">Thumbnail URL</label>
-    <input id="thumbnail" type="url" formControlName="thumbnail_url" />
-  </div>
-
-  <!-- Duration -->
-  <div class="form-group">
-    <label for="duration">Duration</label>
-    <input
-      id="duration"
-      type="number"
-      formControlName="duration_seconds"
-      placeholder="Duration in seconds"
-    />
+    <input id="thumbnail" type="url" formControlName="thumbnailURL" />
   </div>
 
   <!-- Tags -->

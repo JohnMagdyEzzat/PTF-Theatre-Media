@@ -1,7 +1,7 @@
 import { Service } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Video, VideoDTO } from '../models/video';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 
 @Service()
 export class SupabaseService {
@@ -22,20 +22,21 @@ export class SupabaseService {
   }
 
   async addVideo(video: Video) {
-    const { youtube_url, ...videoDataRest } = video;
-    const youtube_id_regxArr = youtube_url.match('[?&]v=([^&#]+)');
+    const { videoUrl, ...videoDataRest } = video;
+    const videoIDRegxArr = videoUrl.match('[?&]v=([^&#]+)');
 
-    if (!youtube_id_regxArr) {
+    if (!videoIDRegxArr) {
       throw 'Youtube url is missing';
     }
 
-    const youtube_id = youtube_id_regxArr[1];
+    const youtube_id = videoIDRegxArr[1];
 
     let videoToAdd: VideoDTO = {
-      ...videoDataRest,
-      youtube_id,
+      ...video,
+      youtubeID: youtube_id,
     };
     const { data, error } = await this.supabase.from('videos').insert([videoToAdd]);
+
     if (error) throw error;
     return data;
   }

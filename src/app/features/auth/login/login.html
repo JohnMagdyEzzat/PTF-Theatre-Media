@@ -1,1 +1,44 @@
-<p>login works!</p>
+<main class="login-page">
+  <section class="login-card" aria-labelledby="login-title">
+    <div class="login-header">
+      <h1 id="login-title">Welcome back</h1>
+      <p>Sign in to continue to Theatre Media.</p>
+    </div>
+
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-field">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          autocomplete="username"
+          placeholder="Enter your username"
+        />
+
+        @if (loginForm.controls.username.invalid && loginForm.controls.username.touched) {
+          <small class="error-message">Username is required.</small>
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          autocomplete="current-password"
+          placeholder="Enter your password"
+        />
+
+        @if (loginForm.controls.password.invalid && loginForm.controls.password.touched) {
+          <small class="error-message">
+            Password is required and must be at least 6 characters.
+          </small>
+        }
+      </div>
+
+      <button type="submit">Sign in</button>
+    </form>
+  </section>
+</main>

@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { VideoPlayer } from './features/videos/video-player/video-player';
+import { Login } from './features/auth/login/login';
 
 export const routes: Routes = [
   {
@@ -35,5 +36,9 @@ export const routes: Routes = [
         component: VideoPlayer,
       },
     ],
+  },
+  {
+    path: 'login',
+    component: Login,
   },
 ];

@@ -2,31 +2,6 @@
    APP SHELL
    ========================================================= */
 
-:host {
-  --sidebar-width: 260px;
-  --topbar-height: 72px;
-
-  --background: #0b0d10;
-  --surface: #111419;
-  --surface-hover: #181c22;
-  --surface-active: #1d222a;
-
-  --border: #252a32;
-
-  --text-primary: #f5f7fa;
-  --text-secondary: #9ba3af;
-  --text-muted: #69717d;
-
-  --accent: #ff3b30;
-  --accent-hover: #ff5147;
-
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-
-  display: block;
-}
-
 /* =========================================================
    RESET
    ========================================================= */

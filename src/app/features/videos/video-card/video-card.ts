@@ -13,7 +13,7 @@ export class VideoCard {
   video = input.required<Video>();
   constructor(private router: Router) {}
   openVideo() {
-    const youtube_id = this.video().youtube_id;
+    const youtube_id = this.video().youtubeID;
     this.router.navigate(['/video/' + youtube_id]);
   }
 }
